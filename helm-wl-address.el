@@ -29,7 +29,7 @@
 ;; (require 'helm-wl-address)
 ;;
 ;; If you want to disable it, please type "M-x helm-wl-address-deactivate-tab".
-;; Conversely, you can turn on by "M-x helm-wl-address-activate-tab".
+;; Conversely, you can turn it on by "M-x helm-wl-address-activate-tab".
 
 ;;; For Japanese User:
 
