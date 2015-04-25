@@ -42,6 +42,7 @@
 ;;; Code:
 
 (require 'helm)
+(require 'cl)
 
 (defvar helm-wl-address-pattern "")
 (defvar helm-wl-address-pattern-start 1)
@@ -63,7 +64,7 @@
 (defun helm-wl-address-candidates ()
   (cl-loop for i in wl-address-list
            collect (list (mapconcat 'identity i ", ")
-                         (concat (caddr i) " <" (car i) ">"))))
+                         (concat (cl-caddr i) " <" (car i) ">"))))
 
 (defvar helm-wl-address-source
   '((name . "wl-address")
