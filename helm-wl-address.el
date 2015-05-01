@@ -77,7 +77,7 @@
                               (cl-loop for i in (helm-marked-candidates)
                                        collect (car i)) ", "))))))))
 
-(defvar helm-wl-address-header-list '("to" "from" "cc" "bcc"))
+(defvar helm-wl-address-header-list '("To" "From" "Cc" "Bcc"))
 
 (defun helm-wl-address-header-p ()
   (and
@@ -91,7 +91,8 @@
      (while (and (looking-at "^[ \t]")
                  (not (= (point) (point-min))))
        (forward-list -1))
-     (looking-at (concat (regexp-opt helm-wl-address-header-list t) ":")))))
+     (let ((case-fold-search t))
+       (looking-at (concat (regexp-opt helm-wl-address-header-list t) ":"))))))
 
 ;;;###autoload
 (defun helm-wl-address ()
